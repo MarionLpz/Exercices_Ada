@@ -123,10 +123,9 @@ function findBestPrice(trips) {
     for (const combos of voyagesCompatibles) {
         //console.log(combos)
         let price = getTripsPrice(combos)
-        console.log(Math.min.apply(price))
         console.log(combos + "Ce voyage rapporte : " + price + " €")
+        }
     }
-}
 
 findBestPrice(voyages)
 //console.log(voyages)
