@@ -55,23 +55,23 @@ const morseToLatin = {
 	'...-': "V",
 	'....': "H"
   }
-//etape 1
+//etape 1 - découper le texte en caractères uniques
 function getLatinCharacterList (texte) {
     const chars = texte.split('')
     return chars
 }
 console.log(getLatinCharacterList("hello world !"))
 
-//etape 2
+//etape 2 - fonction de traduction d'un caractère latin en morse 
 function translateLatinCharacter (char) {
-    return latinToMorse[char]
+    return latinToMorse[char.toUpperCase()]
  }
 
-console.log(translateLatinCharacter ("Z"))
+console.log(translateLatinCharacter ("z"))
 
-//etape 3
+//etape 3 - fonction de traduction d'un texte latin en morse
 function encode (texte) {
-    texte = getLatinCharacterList (texte.toUpperCase())
+    texte = getLatinCharacterList (texte)
     let result = ""
     for (let i of texte ) { 
         result += translateLatinCharacter (i)
@@ -81,7 +81,7 @@ function encode (texte) {
 
 console.log(encode("kevin"))
 
-// etape 4
+// etape 4 
 let txtMorse = "-.-. ..- .-.."
 
 function getMorseCharacterList (morse) {
@@ -110,7 +110,7 @@ function decode (morse)  {
 
 console.log(decode(txtMorse))
 
-// //Etape 5
+// //Etape 5 -> construire le HTML
 
 // let textRecu = document.getElementById("myTextInput").innerHTML
 // console.log(textRecu)
