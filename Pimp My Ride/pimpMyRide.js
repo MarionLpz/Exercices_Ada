@@ -4,7 +4,7 @@ let tripToParse = "Perdita 8 10 8"
 //-----Etape 1 : créer fonction / split mots / range dans un dictionnaire (hash table)
 function parseTrip(trip) {
     let splitTrip = trip.split(" ")
-    let tripObject = {client : splitTrip[0], start : splitTrip[1], duration : splitTrip[2], price : splitTrip[3]}
+    let tripObject = { client: splitTrip[0], start: splitTrip[1], duration: splitTrip[2], price: splitTrip[3] }
     return tripObject
 }
 console.log(parseTrip(tripToParse))
@@ -12,11 +12,11 @@ console.log(parseTrip(tripToParse))
 
 //-----Etape 2 : utiliser la première fonction pour en créer une seconde et traiter plus de données
 let tripsToParse = ["Roger 0 5 10",
-	"Pongo 3 7 14",
-	"Perdita 8 10 8",
-	"Anita 16 3 7"]
+    "Pongo 3 7 14",
+    "Perdita 8 10 8",
+    "Anita 16 3 7"]
 
- function parseTrips(trips) {
+function parseTrips(trips) {
     //V1 : METHODE .MAP
     let tripsArray = trips.map(parseTrip);
     return tripsArray
@@ -27,14 +27,14 @@ let tripsToParse = ["Roger 0 5 10",
     //     trips.push(parseTrip(array[index]))
     // }
     // return trips
- }
+}
 
- console.log(parseTrips(tripsToParse))
+console.log(parseTrips(tripsToParse))
 
- //-----Etape 3 : additionner les prix dans un objet avec une boucle for of
- //let voyages = [{client: 'Roger', start: 0, duration: 5, price: 10}, {client: 'Pongo', start: 3, duration: 7, price: 14}]
+//-----Etape 3 : additionner les prix dans un objet avec une boucle for of
+//let voyages = [{client: 'Roger', start: 0, duration: 5, price: 10}, {client: 'Pongo', start: 3, duration: 7, price: 14}]
 
-function getTripsPrice (trips) {
+function getTripsPrice(trips) {
     let res = 0
     for (const elem of trips) {
         //console.log(elem.price)
@@ -43,12 +43,12 @@ function getTripsPrice (trips) {
     return res
 }
 
- console.log(getTripsPrice([ {client: 'Roger', start: 0, duration: 5, price: 10}, 
- {client: 'Pongo', start: 3, duration: 7, price: 14} ]))
+console.log(getTripsPrice([{ client: 'Roger', start: 0, duration: 5, price: 10 },
+{ client: 'Pongo', start: 3, duration: 7, price: 14 }]))
 
- //console.log(getTripsPrice(voyages))
+//console.log(getTripsPrice(voyages))
 
- //----Etape 4 : comparer deux structures entre elles
+//----Etape 4 : comparer deux structures entre elles
 
 //--V1 - Test sans fonction--
 // let tripA = {'client': 'Roger', 'start': 0, 'duration': 5, 'price': 10}
@@ -62,34 +62,34 @@ function getTripsPrice (trips) {
 function checkCompatibility(tripA, tripB) {
     if (tripA.start + tripA.duration > tripB.start) {
         return false
-        
-    } else { 
-        return true    
+
+    } else {
+        return true
     }
 }
 
-console.log(checkCompatibility({'client': 'Roger', 'start': 0, 'duration': 5, 'price': 10},{'client': 'Pongo', 'start': 3, 'duration': 7, 'price': 14}))
+console.log(checkCompatibility({ 'client': 'Roger', 'start': 0, 'duration': 5, 'price': 10 }, { 'client': 'Pongo', 'start': 3, 'duration': 7, 'price': 14 }))
 
-console.log(checkCompatibility({'client': 'Roger', 'start': 0, 'duration': 5, 'price': 10},
-{'client': 'Perdita', 'start': 8, 'duration': 10, 'price': 8}))
+console.log(checkCompatibility({ 'client': 'Roger', 'start': 0, 'duration': 5, 'price': 10 },
+    { 'client': 'Perdita', 'start': 8, 'duration': 10, 'price': 8 }))
 
 //----Etape 5 : comparer un tableau à lui même
 //--Développez une fonction qui retourne tous les ensembles de voyages compatibles les uns avec les autres
 
-let trips = [{'client': 'Roger', 'start': 0, 'duration': 5, 'price': 10}, 
-{'client': 'Pongo', 'start': 3, 'duration': 7, 'price': 14},
-{'client': 'Perdita', 'start': 8, 'duration': 10, 'price': 8},
-{'client': 'Anita', 'start': 16, 'duration': 3, 'price': 7}]
+let trips = [{ 'client': 'Roger', 'start': 0, 'duration': 5, 'price': 10 },
+{ 'client': 'Pongo', 'start': 3, 'duration': 7, 'price': 14 },
+{ 'client': 'Perdita', 'start': 8, 'duration': 10, 'price': 8 },
+{ 'client': 'Anita', 'start': 16, 'duration': 3, 'price': 7 }]
 
 
- function findCompatibilities(trips) {
+function findCompatibilities(trips) {
     let compatibilities = []
     for (let i = 0; i < trips.length; i++) {
         const voyageA = trips[i];
 
         for (let j = 0; j < trips.length; j++) {
             const voyageB = trips[j];
-            
+
             if (checkCompatibility(voyageA, voyageB) == true) {
                 compatibilities.push([voyageA, voyageB])
             }
@@ -98,10 +98,10 @@ let trips = [{'client': 'Roger', 'start': 0, 'duration': 5, 'price': 10},
             }
         }
     }
-         return compatibilities
- }
+    return compatibilities
+}
 
- console.log(findCompatibilities(trips))
+console.log(findCompatibilities(trips))
 
 //-----Etape 6 : renverra le combo ou le voyage seul qui rapportera le plus à votre entreprise
 
@@ -110,10 +110,10 @@ let trips = [{'client': 'Roger', 'start': 0, 'duration': 5, 'price': 10},
 // puis additionner les prix des compatibles getPrice(voyagescompatibles)
 // retourner tableau
 
-let voyages = [{'client': 'Roger', 'start': 0, 'duration': 5, 'price': 10}, 
-{'client': 'Pongo', 'start': 3, 'duration': 7, 'price': 14},
-{'client': 'Perdita', 'start': 8, 'duration': 10, 'price': 8},
-{'client': 'Anita', 'start': 16, 'duration': 3, 'price': 7}]
+let voyages = [{ 'client': 'Roger', 'start': 0, 'duration': 5, 'price': 10 },
+{ 'client': 'Pongo', 'start': 3, 'duration': 7, 'price': 14 },
+{ 'client': 'Perdita', 'start': 8, 'duration': 10, 'price': 8 },
+{ 'client': 'Anita', 'start': 16, 'duration': 3, 'price': 7 }]
 
 function findBestPrice(trips) {
     let voyagesCompatibles = findCompatibilities(trips)
@@ -124,8 +124,8 @@ function findBestPrice(trips) {
         //console.log(combos)
         let price = getTripsPrice(combos)
         console.log(combos + "Ce voyage rapporte : " + price + " €")
-        }
     }
+}
 
 findBestPrice(voyages)
 //console.log(voyages)
