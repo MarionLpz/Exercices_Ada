@@ -1,5 +1,5 @@
 # Exercices individuels
-Ce repo contient des exercices individuels réalisés au cours de ma formation à Ada Tech School (2023).
+Ce repo contient des exercices individuels réalisés au cours de ma formation initiale à Ada Tech School, débutée le 24 janvier 2023 jusqu'au 6 octobre 2023.
 
 ## 03_Morse
 Date : mars 2023
