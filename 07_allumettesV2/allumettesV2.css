@@ -1,0 +1,81 @@
+#lancement {
+    visibility: show;
+}
+
+#Allumettes {
+    font-family: 'Raleway', sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    width: 15%;
+    text-align: center;
+    margin: 12px;
+}
+
+#allumettesForm {
+    border: 1px none black;
+    border-radius: 15px 50px 30px;
+    background: #F2F2F2;
+    display: inline-block;
+    width: 50%;
+    padding: 50px;
+}
+
+#joueurs {
+    font-size: smaller;
+    font-style: italic;
+}
+
+button {
+    appearance: button;
+    background-color: #000;
+    background-image: none;
+    border: 1px solid #000;
+    border-radius: 2px;
+    box-shadow: #fff 4px 4px 0 0, #000 4px 4px 0 1px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 20px;
+    margin: 0 5px 10px 0;
+    overflow: visible;
+    padding: 10px 30px;
+    text-align: center;
+    text-transform: none;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    transition: box-shadow 200ms;
+}
+
+button:hover {
+    box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px;
+    background: #F2CED5;
+}
+
+h1 {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 70px;
+    text-align: center;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    font-size: 17px;
+}
+
+#regles {
+    border: 1px solid black;
+    border-radius: 15px 50px 30px;
+    border-width: 35px;
+    font-size: 16px;
+    background-color: #000;
+    color: #fff;
+    display: inline-block;
+}
