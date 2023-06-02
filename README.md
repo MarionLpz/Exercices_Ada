@@ -33,3 +33,12 @@ Au départ, il y a un tas de 50 allumettes, (ou tout autre objet : cailloux, jet
 * Réalisation du jeu multijoueur en JS et création d'une interface graphique en HTML et CSS.
 
 <img src="https://user-images.githubusercontent.com/123973628/232429514-67fa00f5-e624-4472-a1ad-8be781d4953b.png" width="600" >
+
+## 16_PHP
+Date : juin 2023
+
+Jouer avec les super-globales en PHP pour une page dynamique. 
+Objectif: se familiariser avec le PHP et les super-globales en anticipation du projet à venir.
+
+* PHP
+
