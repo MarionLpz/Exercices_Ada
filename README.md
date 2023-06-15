@@ -17,6 +17,13 @@ Vous décidez de vous lancer dans le business avec le Tupolev-114 de votre grand
 
 * JS
 
+## Pimp my ride V2
+Date : juin 2023
+
+Réécrire le code en suivant les principes de la Programmation orientée objet (POO).
+
+* JS
+
 ## 06_Palindromes
 Date : mars 2023
 
@@ -41,4 +48,6 @@ Jouer avec les super-globales en PHP pour une page dynamique.
 Objectif: se familiariser avec le PHP et les super-globales en anticipation du projet à venir.
 
 * PHP
+
+
 
