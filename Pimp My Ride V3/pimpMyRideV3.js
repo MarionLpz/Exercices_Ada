@@ -15,7 +15,6 @@ class Trip {
         this.#start = parseInt(start)
         this.#duration = parseInt(duration)
         this.#price = parseInt(price)
-        this.#end = Number(start) + Number(duration) // Ajout d'une propriété end qui calcule l'heure de fin de vol
     }
 
     get name() {
@@ -135,4 +134,4 @@ function findBestPrice(trips) {
     return [bestTrip, bestPrice]
 }
 
-console.log(findBestPrice(allMyTrips))
+findBestPrice(allMyTrips)
