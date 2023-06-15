@@ -1,21 +1,47 @@
-// PIMP MY RIDE V2 - PROGRAMMATION ORIENTEE OBJET
+// PIMP MY RIDE V3 - PROGRAMMATION ORIENTEE OBJET VERSION SECURISEE
 
 let tripToParse = "Perdita 8 10 8"
 
 class Trip {
 
+    #name;
+    #start;
+    #duration;
+    #price;
+    #end;
+
     constructor(name, start, duration, price) {
-        this.name = name
-        this.start = parseInt(start)
-        this.duration = parseInt(duration)
-        this.price = parseInt(price)
-        this.end = Number(start) + Number(duration) // Ajout d'une propriété end qui calcule l'heure de fin de vol
+        this.#name = name
+        this.#start = parseInt(start)
+        this.#duration = parseInt(duration)
+        this.#price = parseInt(price)
+        this.#end = Number(start) + Number(duration) // Ajout d'une propriété end qui calcule l'heure de fin de vol
+    }
+
+    get name() {
+        return this.#name
+    }
+
+    get start() {
+        return this.#start
+    }
+
+    get duration() {
+        return this.#duration
+    }
+
+    get price() {
+        return this.#price
+    }
+
+    get end() {
+        return this.#end == Number(start) + Number(duration)
     }
 
     // Ajouter une fonction qui vérifie la compatibilité des vols
     isCompatible(trip) {
         if (
-            ((this.end <= trip.start || this.start >= trip.end))
+            (this.#end <= trip.#start)
         ) {
             return true; // Les vols ne se chevauchent pas
         } else {
@@ -49,7 +75,7 @@ function parseTrips(trips) {
 }
 
 let allMyTrips = parseTrips(tripsToParse2);
-console.log("allMyTrips =", JSON.stringify(allMyTrips));
+console.log(allMyTrips);
 
 
 // Check de la méthode de compatibilité des vols
@@ -58,7 +84,7 @@ let anotherTrip = allMyTrips[2]
 
 console.log("trip = " + JSON.stringify(trip) + " // anotherTrip = " + JSON.stringify(anotherTrip))
 
-console.log("compatibilité entre Anita et Perdita = " + trip.isCompatible(anotherTrip))
+console.log(trip.isCompatible(anotherTrip))
 
 //Créer une fonction qui retourne toutes les compatibilités de voyage - comparaison d'un tab à lui même
 function findCompatibilities(trips) {
@@ -68,6 +94,7 @@ function findCompatibilities(trips) {
 
         for (let j = 0; j < trips.length; j++) {
             const voyageB = trips[j];
+            console.log(voyageA + voyageB)
 
             if (voyageA.isCompatible(voyageB)) {
                 compatibilities.push([voyageA, voyageB])
@@ -79,10 +106,8 @@ function findCompatibilities(trips) {
     }
     return compatibilities
 }
-console.log(findCompatibilities(allMyTrips))
-
-
-//-----Etape 6 : renverra le combo ou le voyage seul qui rapportera le plus à votre entreprise
+let compatiblesTrips = findCompatibilities(allMyTrips)
+console.log(compatiblesTrips)
 
 function getTripsPrice(trips) {
     let res = 0
